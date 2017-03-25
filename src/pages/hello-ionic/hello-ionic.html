@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hello Ionic</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="tarefa.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Descrição</ion-label>
+      <ion-input type="text" [(ngModel)]="tarefa.descricao"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="adicionar()">Adicionar</button>
+
+  <ion-list>
+    <button ion-item *ngFor="let t of tarefas">
+      {{t.nome}}
+    </button>
+  </ion-list>
+
+</ion-content>
